@@ -1,0 +1,54 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Debug",
+				"type": "lldb",
+				"request": "launch",
+				"program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}",
+				"args": [],
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"VAR": "VALUE"
+				},
+				"preLaunchTask": "rust build",
+			}
+		],
+		"compounds": []
+	},
+	"settings": {
+		"vim.handleKeys": {
+			"<C-d>": true,
+			"<C-j>": false,
+			"<C-s>": false,
+			"<C-z>": false,
+			"<C-w>": false,
+		}
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "rust build",
+				"command": "cargo",
+				"type": "shell",
+				"args": [
+					"build"
+				],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build"
+			}
+		]
+	}
+}
